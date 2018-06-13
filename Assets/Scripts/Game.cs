@@ -5,13 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
-    protected enum Difficult
-    {
-        EASY,
-        NORMAL,
-        HARD
-    }
-
 
     // Please use difficult by GetDifficult() and test it in editor's inspector.
     [SerializeField, Header("Test")]
@@ -23,6 +16,7 @@ public class Game : MonoBehaviour
         MIDDLE = 7,
         LONG = 9
     }
+
 
     // Please set timeLength in editor's inspector.
     [SerializeField, Header("Game Setting")]
@@ -41,14 +35,10 @@ public class Game : MonoBehaviour
 
     // Please override this method and must call base.Update();
     protected virtual void Update() {
+        difficult = GameManager.instance.G_difficult;
         if (Time.time > limitTime) {
-            //Debug.LogWarning(isCleared);
             GameManager.instance.LoadGame(gameObject.scene.name, isCleared);
         }
-    }
-
-    protected Difficult GetDifficult() {
-        return difficult;
     }
 
 }

@@ -6,10 +6,8 @@ public class SabotenGame : Game
 {
     protected override void Update() {
         base.Update();
-
         if (Input.GetMouseButtonDown(0)) {
             isCleared = true;
-            Debug.Log("win");
         }
             
     }

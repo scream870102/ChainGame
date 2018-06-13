@@ -15,6 +15,10 @@ public class UIEventHandler : MonoBehaviour {
 	}
 
     public void StartBtnClick() {
-        GameManager.instance.LoadInitGame();
+        GameManager.instance.gameState=GameManager.GameState.LOADING;
+    }
+
+    public void RetryBtnClick() {
+        GameManager.instance.gameState = GameManager.GameState.RETRY;
     }
 }

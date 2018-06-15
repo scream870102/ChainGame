@@ -4,20 +4,13 @@ using UnityEngine;
 
 public class UIEventHandler : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
+    //Call when start button click
     public void StartBtnClick() {
         GameManager.instance.gameState=GameManager.GameState.LOADING;
     }
 
+    //Call when Retry Button click
     public void RetryBtnClick() {
         GameManager.instance.gameState = GameManager.GameState.RETRY;
     }

@@ -5,11 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
-
-    // Please use difficult by GetDifficult() and test it in editor's inspector.
-    [SerializeField, Header("Test")]
-    Difficult difficult;
-
     enum TimeLength
     {
         SHORT = 5,
@@ -17,13 +12,17 @@ public class Game : MonoBehaviour
         LONG = 9
     }
 
+    // Please use difficult by GetDifficult() and test it in editor's inspector.
+    [SerializeField, Header("Test")]
+    Difficult difficult;
 
     // Please set timeLength in editor's inspector.
     [SerializeField, Header("Game Setting")]
     TimeLength timeLength = TimeLength.SHORT;
 
+    //If game cleared
     protected bool isCleared;
-
+    //remaining time
     float limitTime;
 
     // Please override this method and must call base.Awake();
@@ -37,8 +36,14 @@ public class Game : MonoBehaviour
     protected virtual void Update() {
         difficult = GameManager.instance.G_difficult;
         if (Time.time > limitTime) {
-            GameManager.instance.LoadGame(gameObject.scene.name, isCleared);
+            GameManager.instance.SendResult(gameObject.scene.name, isCleared);
         }
+    }
+
+    //Return difficult
+    protected Difficult GetDifficult() {
+        Difficult temp = difficult;
+        return temp;
     }
 
 }

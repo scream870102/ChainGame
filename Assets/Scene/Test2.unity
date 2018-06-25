@@ -273,3 +273,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   difficult: 0
   timeLength: 5
+  ghost: {fileID: 1061042242286548, guid: 0e49b035d144dbf40a18243c48871a75, type: 2}

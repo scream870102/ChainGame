@@ -5,12 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
-    enum TimeLength
-    {
-        SHORT = 5,
-        MIDDLE = 7,
-        LONG = 9
-    }
+
 
     // Please use difficult by GetDifficult() and test it in editor's inspector.
     [SerializeField, Header("Test")]
@@ -46,5 +41,16 @@ public class Game : MonoBehaviour
         return temp;
     }
 
+    protected float GetTimeRemain() {
+        return limitTime - Time.time;
+    }
+
+    protected float GetTimeLength() {
+        return (float)timeLength;
+    }
+
+    protected float GetTimePass() {
+        return (float)timeLength - GetTimeRemain();
+    }
 }
 

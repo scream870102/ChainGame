@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+//Enum of state machine
 
 public class GameManager : MonoBehaviour {
-    
-    //Enum of state machine
     public enum GameState
     {
         START,

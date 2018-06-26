@@ -5,7 +5,7 @@ using UnityEngine;
 //Must inherit Class Game
 //
 
-public class Ghost : Game
+public class GhostManager : Game
 {
     private const float OFFSET = 3.0f;
     private const float SPAWN_OFFSET = 1.0f;
@@ -32,13 +32,12 @@ public class Ghost : Game
             ghosts.Add(spawnGhost());
             isDead = true;
         }
-        if (isDead) {
-            if (GetTimePass()+SPAWN_OFFSET < GetTimeLength() - END_OFFSET) {
-                appearTime = Random.Range(GetTimePass()+SPAWN_OFFSET, GetTimeLength() - END_OFFSET);
-                isDead = false;
-            }
-            
+
+        if (isDead&& GetTimePass() + SPAWN_OFFSET < GetTimeLength() - END_OFFSET) {
+            appearTime = Random.Range(GetTimePass()+SPAWN_OFFSET, GetTimeLength() - END_OFFSET);
+            isDead = false;
         }
+
         if (GetTimeRemain() < 0.01f) {
             if (ghosts.Count == 0)
                 isCleared = true;

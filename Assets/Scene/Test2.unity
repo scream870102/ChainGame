@@ -268,9 +268,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1981183162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64a0274acad4cdc4c9ee6dc058d12d13, type: 3}
+  m_Script: {fileID: 11500000, guid: 26a8f495630c7f44da4a276b1d97cea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   difficult: 0
   timeLength: 5
-  ghost: {fileID: 1061042242286548, guid: 0e49b035d144dbf40a18243c48871a75, type: 2}
